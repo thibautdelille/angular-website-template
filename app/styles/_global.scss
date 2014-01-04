@@ -6,7 +6,9 @@ img{
   display:block;
 }
 .project{
-  margin-bottom:50px;
+  padding-top:20px;
+  padding-bottom:50px;
+  border-bottom: 1px solid $gray-light;
 }
 .container{
   width:720px;
