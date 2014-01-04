@@ -1,0 +1,35 @@
+/*
+font-family:'Buster LT W01';
+font-family:'Univers LT W01 45 Light';
+font-family:'UniversLTW10-45LightObl';
+font-family:'Univers LT W01 55 Roman';
+font-family:'UniversLTW01-55Oblique';
+font-family:'Univers LT W01 65 Bold';
+font-family:'UniversLTW01-85ExtraBla';
+font-family:'UniversLTW01-57Condense 723821';
+font-family:'UniversLTW01-57Condense 723818';
+*/
+body{
+  font-family:$font-light;
+}
+
+.header{
+  h3{
+    font-family:$font-logo;
+    font-size:32px;
+  }
+}
+
+h2{
+  font-family:$font-light;
+}
+h4{
+  font-family:$font-romanitalic;
+}
+
+a{
+  color:$red;
+}
+.text-muted{
+  color:$gray;
+}
