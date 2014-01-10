@@ -13,6 +13,6 @@ angular.module('thibautdelilleApp', [
         controller: 'MainCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/404.html'
       });
   });

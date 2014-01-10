@@ -6,17 +6,27 @@ describe('Controller: ProjectsCtrl', function () {
   beforeEach(module('thibautdelilleApp'));
 
   var ProjectsCtrl,
-    scope;
+    scope,
+    $httpBackend;
 
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
+    $httpBackend = _$httpBackend_;
+    $httpBackend.expectGET('data/projects.json').
+        respond([{name: 'Project 1'}, {name: 'Project 2'}]);
+
     scope = $rootScope.$new();
-    ProjectsCtrl = $controller('ProjectsCtrl', {
-      $scope: scope
-    });
+    ProjectsCtrl = $controller('ProjectsCtrl', {$scope: scope});
   }));
 
-  it('should attach a list of Projects to the scope', function () {
-    expect(scope.projects.length).toBe(4);
+
+  it('should create "projects" model with 2 projects fetched from xhr', function() {
+    expect(scope.projects).toBeUndefined();
+    $httpBackend.flush();
+
+    expect(scope.projects).toEqual([{name: 'Project 1'}, {name: 'Project 2'}]);
+  });
+
+  it('should set the default value of orderProp model', function() {
+    expect(scope.orderProp).toBe('age');
   });
 });

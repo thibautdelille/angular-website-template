@@ -21,6 +21,17 @@ describe("homepage", function () {
       browser.findElements(by.css('.project')).then(function(arr) {
         expect(arr.length).toEqual(2);
       });
-    })
+    });
+    it('should be possible to control phone order via the drop down select box', function() {
+      element(by.model('orderProp')).sendKeys('name');
+      browser.findElements(by.css('.project h2')).then(function(arr) {
+        expect(arr[1].getText()).toEqual("Josephine and Thibaut Wedding Website");
+      });
+    });
+    it('should render project specific links', function() {
+      element(by.model('query')).sendKeys('publictones');
+      element(by.css('.project a')).click();
+      expect(ptor.getCurrentUrl()).toBe('http://localhost:9000/#/projects/publictones');
+    });
   });
 });

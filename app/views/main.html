@@ -1,9 +1,14 @@
 <main-nav></main-nav>
 <div ng-controller="ProjectsCtrl">
   Search: <input ng-model="query">
-  <div class="project" ng-repeat="project in projects | filter:query">
+  Sort by:
+  <select ng-model="orderProp">
+    <option value="name">Alphabetical</option>
+    <option value="age">Newest</option>
+  </select>
+  <div class="project" ng-repeat="project in projects | filter:query | orderBy:orderProp">
     <h2>{{project.name}}</h2>
-    <img src="{{project.img}}" alt="PublicTones">
+    <a href="#/projects/{{project.id}}"><img src="{{project.img}}" alt="PublicTones"></a>
     <p><a href="{{project.url}}" target="_blank">View the site</a></p>
   </div>
 </div>
