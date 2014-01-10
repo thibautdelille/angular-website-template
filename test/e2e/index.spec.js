@@ -1,9 +1,9 @@
 'use strict';
 
-describe("homepage", function () {
+describe("Portfolio", function () {
   var ptor = protractor.getInstance();
 
-  describe("index", function () {
+  describe("Projects", function () {
     beforeEach(function() {
       ptor.get('/#');
     });
@@ -32,6 +32,15 @@ describe("homepage", function () {
       element(by.model('query')).sendKeys('publictones');
       element(by.css('.project a')).click();
       expect(ptor.getCurrentUrl()).toBe('http://localhost:9000/#/projects/publictones');
+    });
+  });
+  describe("Project Page", function () {
+    beforeEach(function() {
+      ptor.get('/#/projects/publictones');
+    });
+
+    it('should display placeholder page with phoneId', function() {
+      expect(element(by.binding('projectId')).getText()).toBe('publictones');
     });
   });
 });
