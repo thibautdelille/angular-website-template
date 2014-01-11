@@ -4,7 +4,8 @@ angular.module('thibautdelilleApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'thibautdelilleServices'
 ])
   .config(function ($routeProvider) {
     $routeProvider

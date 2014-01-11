@@ -6,7 +6,7 @@ var thibautdelilleServices = angular.module('thibautdelilleServices', ['ngResour
 
 thibautdelilleServices.factory('Project', ['$resource',
   function($resource){
-    return $resource('projects/:phoneId.json', {}, {
-      query: {method:'GET', params:{projectId:'projects'}, isArray:true}
+    return $resource('data/:projectId.:type', {}, {
+      query: {method:'GET', params:{projectId:'projects', type:'json'}, isArray:true}
     });
   }]);
