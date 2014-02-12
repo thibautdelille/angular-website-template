@@ -1,18 +1,4 @@
 <main-nav></main-nav>
-<div>
-  Search: <input ng-model="query">
-  Sort by:
-  <select ng-model="orderProp">
-    <option value="name">Alphabetical</option>
-    <option value="age">Newest</option>
-  </select>
-  <div class="project" ng-repeat="project in projects | filter:query | orderBy:orderProp">
-    <h2>{{project.name}}</h2>
-    <a href="#/projects/{{project.id}}"><img src="{{project.img}}" alt="PublicTones"></a>
-    <p><a href="{{project.url}}" target="_blank">View the site</a></p>
-  </div>
-</div>
-<!--
 <div class="project">
   <h2>PublicTones</h2>
   <img src="images/publictones.jpg" alt="PublicTones">
@@ -70,4 +56,4 @@
   <p><a href="http://www.pokedex3d.com/" target="_blank">View the site</a></p>
   <p>Our friends at Pokemon needed our help to create a website for the last version of the <em>Pokedex 3d Pro</em> game. The objective of this site was to create a semi 3d environment on the site. Not an Easy task when you have to support ie7. I developed a custom frontend frameworks based on JQuery that use a parallax systems to do the trick</p>
   <p>Like all the Pokemon site this site support 12 differents Languages, witch doesn't make the task easier ;)</p>
-</div>-->
+</div>
