@@ -1,4 +1,10 @@
-portfolio
+Angular Website template
 =========
 
-New Instance of my portfolio made with Angular.js
+A website template generated with yeoman angular template.
+I added to this template the end to end testing with protractor.
+
+### Installation
+ * `sudo npm install`
+ * `bower install`
+ * `grunt serve`
